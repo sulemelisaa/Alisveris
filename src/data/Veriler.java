@@ -31,16 +31,18 @@ public class Veriler {
 
     static {
         personelList = new ArrayList<>();
+                musteriList = new ArrayList<>();
+                urunList = new ArrayList<>();
 //        personelList.add(new Personel("ali", "b", "a", 0, "kasiyer"));
 //        personelList.add(new Mudur("mehmet", "b", "mb1", 0, "mudur", 5, "gida"));
 //        personelList.add(new Mudur("murat", "b", "mb2", 0, "mudur", 5, "elektronik"));
 //        personelList.add(new Mudur("mehmet", "b", "mb3", 0, "mudur", 5, "giyim"));
 //        personelList.add(new Mudur("murat", "b", "mb4", 0, "mudur", 5, "temizlik"));
 
-        musteriList = new ArrayList<>();
+
 //        musteriList.add(new Musteri("melisa", "börek", 13));
 //        musteriList.add(new Musteri("melis", "b", 12));
-        urunList = new ArrayList<>();
+        
 //        urunList.add(new Yiyecek("biskrem", 1, 1, "gida"));
 //        urunList.add(new Yiyecek("popkek", 2, 2, "gida"));
 //        urunList.add(new Yiyecek("tadelle", 3, 1, "gida"));
@@ -57,10 +59,10 @@ public class Veriler {
 //        urunList.add(new EvAletleri(100, "mutfak robotu", 1, 120, "elektronik"));
 //        urunList.add(new EvAletleri(100, "gece lambası", 1, 80, "elektronik"));
 //        urunList.add(new EvAletleri(200, "vantilatör", 1, 70, "elektronik"));
-//        urunList.add(new Telefon(1, 1, "iphone", 1, 3000, "elektronik"));
-//        urunList.add(new Telefon(1, 2, "LG", 1, 1500, "elektronik"));
-//        urunList.add(new Telefon(1, 3, "samsung", 1, 2500, "elektronik"));
-//        urunList.add(new Telefon(1, 4, "venüs", 1, 500, "elektronik"));
+////        urunList.add(new Telefon(1, 1, "iphone", 1, 3000, "elektronik"));
+////        urunList.add(new Telefon(1, 2, "LG", 1, 1500, "elektronik"));
+////        urunList.add(new Telefon(1, 3, "samsung", 1, 2500, "elektronik"));
+////        urunList.add(new Telefon(1, 4, "venüs", 1, 500, "elektronik"));
 //        urunList.add(new AltGiyim("q", "pantolon", 2, 90, "giyim"));
 //        urunList.add(new AltGiyim("q", "etek", 2, 100, "giyim"));
 //        urunList.add(new UstGiyim("q", "kazak", 3, 60, "giyim"));
@@ -180,7 +182,7 @@ public class Veriler {
                         }
                     }
 
-                    System.out.println(ad + " - " + toplamAdet + " adet ürün" + fiyat + " - tl ");
+                    System.out.println(ad + " - " + toplamAdet + " çeşit ürün" + fiyat + " - tl ");
 //                    Veriler.detayGoruntule(m,bolum);
                 }
             }

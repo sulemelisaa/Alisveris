@@ -7,11 +7,11 @@ package main;
 
 import data.Siparis;
 import data.Veriler;
-import static data.Veriler.urunList;
+import static file.FileRead.Kisi;
+import static file.FileRead.Urun;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import kisi.Kasiyer;
 import kisi.Mudur;
 import kisi.Musteri;
 import kisi.Personel;
@@ -35,6 +35,8 @@ public class Run {
     public static void main(String[] args) {
         while (true) {
             try {
+               Kisi();
+               Urun();
                 System.out.println("* * * * * * * * * * * *  HOŞ GELDİNİZ  * * * * * * * * * * * *");
                 Scanner giris = new Scanner(System.in);
                 System.out.println(" ");
@@ -44,6 +46,8 @@ public class Run {
                 int d = giris.nextInt();
                 String cinsi;
                 int fiyati;
+                
+                
                 if (d == 2) {
                     Scanner kullanıcıAdı = new Scanner(System.in);
                     System.out.println("Kullanıcı adınızı giriniz : ");
@@ -53,8 +57,8 @@ public class Run {
                     int b = sifre.nextInt();
                     Personel p;
                     p = Veriler.kontrol(a, b);
-                    if (p != null) {
-                        if (p instanceof Mudur) {
+                            if (p != null) {
+                                if (p instanceof Mudur) {
                             String bolum = ((Mudur) p).getBolum();
                             Siparis cins = Veriler.siparisleriListele(bolum);
                             System.out.println("detay istiyo musun ? ");
@@ -67,9 +71,10 @@ public class Run {
                             break;
                             }
                             
-                            
+                                }
                         } 
-                    }
+                    
+                    
                 } else if (d == 1) {
                     //Müşteri no sorulacak, musteri olşacak
                     Scanner musNo = new Scanner(System.in);
@@ -104,7 +109,7 @@ public class Run {
                                 //yiyecek bölümü
                                 if (g == 1) {
                                     int count = -1;
-                                    for (int i = 0; i < urunList.size(); i++) {
+                                    for (int i = 0; i < Veriler.urunList.size(); i++) {
                                         Urun u = Veriler.urunList.get(i);
                                         if (u instanceof Yiyecek) {
                                             count++;
@@ -118,7 +123,7 @@ public class Run {
                                 //icecek
                                 if (g == 2) {
                                     int count = -1;
-                                    for (int i = 0; i < urunList.size(); i++) {
+                                    for (int i = 0; i < Veriler.urunList.size(); i++) {
                                         Urun u = Veriler.urunList.get(i);
                                         if (u instanceof Icecek) {
                                             count++;
@@ -141,7 +146,7 @@ public class Run {
                                 //ev aletleri
                                 if (e == 1) {
                                     int count = -1;
-                                    for (int i = 0; i < urunList.size(); i++) {
+                                    for (int i = 0; i < Veriler.urunList.size(); i++) {
                                         Urun u = Veriler.urunList.get(i);
                                         if (u instanceof EvAletleri) {
                                             count++;
@@ -154,7 +159,7 @@ public class Run {
                                 //telefon
                                 if (e == 2) {
                                     int count = -1;
-                                    for (int i = 0; i < urunList.size(); i++) {
+                                    for (int i = 0; i < Veriler.urunList.size(); i++) {
                                         Urun u = Veriler.urunList.get(i);
                                         if (u instanceof Telefon) {
                                             count++;
@@ -176,7 +181,7 @@ public class Run {
                                 //üst giyim
                                 if (giy == 1) {
                                     int count = -1;
-                                    for (int j = 0; j < urunList.size(); j++) {
+                                    for (int j = 0; j < Veriler.urunList.size(); j++) {
                                         Urun u = Veriler.urunList.get(j);
                                         if (u instanceof UstGiyim) {
                                             count++;
@@ -189,7 +194,7 @@ public class Run {
                                 //alt giyim
                                 if (giy == 2) {
                                     int count = -1;
-                                    for (int i = 0; i < urunList.size(); i++) {
+                                    for (int i = 0; i < Veriler.urunList.size(); i++) {
                                         Urun u = Veriler.urunList.get(i);
                                         if (u instanceof AltGiyim) {
                                             count++;
@@ -211,7 +216,7 @@ public class Run {
                                 //ev aletleri
                                 if (t == 1) {
                                     int count = -1;
-                                    for (int i = 0; i < urunList.size(); i++) {
+                                    for (int i = 0; i < Veriler.urunList.size(); i++) {
                                         Urun u = Veriler.urunList.get(i);
                                         if (u instanceof Deterjan) {
                                             count++;
@@ -226,7 +231,7 @@ public class Run {
                                 if (t == 2) {
                                     int count = -1;
                                     System.out.println(" ");
-                                    for (int i = 0; i < urunList.size(); i++) {
+                                    for (int i = 0; i < Veriler.urunList.size(); i++) {
                                         Urun u = Veriler.urunList.get(i);
                                         if (u instanceof TemizlikGerecleri) {
                                             count++;
