@@ -46,6 +46,7 @@ public class FileReadTest {
 
     public static void main(String[] args) {
         Urun();
+        System.out.println("");
     }
 
     public static int Urun() {
@@ -53,7 +54,7 @@ public class FileReadTest {
             Urun y = (new Yiyecek("", 0, 0, ""));
             Urun i = (new Icecek("", 0, 0, ""));
             Urun ea = (new EvAletleri(0, "", 0, 0, ""));
-            Urun t = (new Telefon(0, 0, "", 0, 0, ""));
+            Urun t = (new Telefon( 0, "", 0, 0, ""));
             Urun alt = (new AltGiyim("", "", 0, 0, ""));
             Urun ust = (new UstGiyim("", "", 0, 0, ""));
             Urun det = (new Deterjan("", 0, 0, ""));
@@ -68,243 +69,246 @@ public class FileReadTest {
                     if (count == 1) {
                         switch (token) {
                             case "yiyecek":
-                                 System.out.println("token: " +token);
+                                System.out.println("token: " + token);
                                 int coun = 0;
                                 for (coun = 1; coun < 5; coun++) {
                                     switch (coun) {
                                         case 1:
                                             y.setCins(tokens[0]);
-                                            System.out.println("cins: " +tokens[0]);
+                                            System.out.println("cins: " + tokens[0]);
                                             break;
                                         case 2:
                                             y.setAd(tokens[1]);
-                                            System.out.println("ad: " +tokens[1]);
+                                            System.out.println("ad: " + tokens[1]);
                                             break;
                                         case 3:
                                             int seri = Integer.parseInt(tokens[2]);
                                             y.setSeriNo(seri);
-                                            System.out.println("seriNo: " +tokens[2]);
+                                            System.out.println("seriNo: " + y.getSeriNo());
                                             break;
                                         case 4:
                                             int fiyat = Integer.parseInt(tokens[3]);
                                             y.setFiyat(fiyat);
-                                            System.out.println("fiyat: " +tokens[3]);
+                                            System.out.println("fiyat: " + y.getFiyat());
                                             break;
                                     }
-                                    Veriler.urunList.add(y);
-                                    
-                                }System.out.println("urunlistesi: " + Veriler.urunList);
+                                }
+                                Veriler.urunList.add(y);
+
+                                System.out.println("urunlistesi: " + Veriler.urunList);
                                 break;
                             case "icecek":
                                 for (int c = 1; c < 5; c++) {
                                     switch (c) {
                                         case 1:
                                             i.setCins(tokens[0]);
-                                            System.out.println("cins: " +tokens[0]);
+                                            System.out.println("cins: " + tokens[0]);
                                             break;
                                         case 2:
                                             i.setAd(tokens[1]);
-                                            System.out.println("ad: " +tokens[1]);
+                                            System.out.println("ad: " + tokens[1]);
                                             break;
 
                                         case 3:
                                             int fiyat = Integer.parseInt(tokens[2]);
                                             i.setFiyat(fiyat);
-                                            System.out.println("fiyat: " +tokens[2]);
+                                            System.out.println("fiyat: " + i.getFiyat());
                                             break;
                                         case 4:
                                             int seri = Integer.parseInt(tokens[3]);
                                             i.setSeriNo(seri);
-                                            System.out.println("seriNo: " +tokens[3]);
+                                            System.out.println("seriNo: " + i.getSeriNo());
                                             break;
                                     }
-                                    Veriler.urunList.add(i);
-                                    
-                                }System.out.println("urunlistesi: " + Veriler.urunList);
+                                }
+                                Veriler.urunList.add(i);
+
+                                System.out.println("urunlistesi: " + Veriler.urunList);
                                 break;
                             case "evAletleri":
                                 for (int c = 1; c < 6; c++) {
                                     switch (c) {
                                         case 1:
                                             ((EvAletleri) ea).setCins(tokens[0]);
-                                            System.out.println("cins: " +tokens[0]);
+                                            System.out.println("cins: " + tokens[0]);
                                             break;
                                         case 2:
                                             int guc = Integer.parseInt(tokens[1]);
                                             ((EvAletleri) ea).setGuc(guc);
-                                            System.out.println("guc: " +tokens[1]);
+                                            System.out.println("guc: " + ((EvAletleri) ea).getGuc());
                                             break;
                                         case 3:
                                             ((EvAletleri) ea).setAd(tokens[2]);
-                                            System.out.println("ad: " +tokens[2]);
-                                            break;
-                                        case 4:
-                                            int seri = Integer.parseInt(tokens[3]);
-                                            i.setSeriNo(seri);
-                                            System.out.println("seriNo: " +tokens[3]);
-                                            break;
-                                        case 5:
-                                            int fiyat = Integer.parseInt(tokens[4]);
-                                            i.setFiyat(fiyat);
-                                            System.out.println("fiyat: " +tokens[4]);
+                                            System.out.println("ad: " + tokens[2]);
                                             break;
 
+                                        case 4:
+                                            int fiyat = Integer.parseInt(tokens[3]);
+                                            ea.setFiyat(fiyat);
+                                            System.out.println("fiyat: " +ea.getFiyat());
+                                            break;
+                                        case 5:
+                                            int seri = Integer.parseInt(tokens[4]);
+                                            ea.setSeriNo(seri);
+                                            System.out.println("seriNo: " + ea.getSeriNo());
+                                            break;
                                     }
-                                    Veriler.urunList.add(ea);
-                                    
-                                }System.out.println("urunlistesi: " + Veriler.urunList);
+                                }
+                                Veriler.urunList.add(ea);
+
+                                System.out.println("urunlistesi: " + Veriler.urunList);
                                 break;
                             case "telefon":
                                 for (int c = 1; c < 7; c++) {
                                     switch (c) {
                                         case 1:
                                             ((Telefon) t).setCins(tokens[0]);
-                                            System.out.println("cins: " +tokens[0]);
-                                            break;
-                                        case 2:
-                                            ((Telefon) t).setAd(tokens[1]);
-                                            System.out.println("ad: " +tokens[1]);
-                                            break;
-                                        case 3:
-                                            int guc = Integer.parseInt(tokens[2]);
-                                            ((Telefon) t).setGuc(guc);
-                                            System.out.println("guc: " +tokens[2]);
+                                            System.out.println("cins: " + tokens[0]);
                                             break;
                                         case 4:
-                                            ((Telefon) t).setAd(tokens[3]);
+                                            int guc = Integer.parseInt(tokens[3]);
+                                            ((Telefon) t).setGuc(guc);
+                                            System.out.println("guc: " + ((Telefon) t).getGuc());
+                                            break;
+                                        case 3:
+                                            ((Telefon) t).setAd(tokens[2]);
+                                            System.out.println("ad: " + tokens[2]);
+                                            break;
+                                        case 2:
+                                            int seri = Integer.parseInt(tokens[1]);
+                                            t.setSeriNo(seri);
+                                            System.out.println("seriNo: " + t.getSeriNo());
                                             break;
                                         case 5:
-                                            int seri = Integer.parseInt(tokens[4]);
-                                            i.setSeriNo(seri);
-                                            System.out.println("seriNo: " +tokens[4]);
-                                            break;
-                                        case 6:
-                                            int fiyat = Integer.parseInt(tokens[5]);
-                                            i.setFiyat(fiyat);
-                                            System.out.println("fiyat: " +tokens[5]);
+                                            int fiyat = Integer.parseInt(tokens[4]);
+                                            t.setFiyat(fiyat);
+                                            System.out.println("fiyat: " + t.getFiyat());
                                             break;
 
                                     }
-                                    Veriler.urunList.add(t);
-                                    
-                                }System.out.println("urunlistesi: " + Veriler.urunList);
+
+                                }
+                                Veriler.urunList.add(t);
+                                System.out.println("urunlistesi: " + Veriler.urunList);
                                 break;
                             case "altGiyim":
                                 for (int c = 1; c < 6; c++) {
                                     switch (c) {
                                         case 1:
                                             ((AltGiyim) alt).setCins(tokens[0]);
-                                            System.out.println("cins: " +tokens[0]);
+                                            System.out.println("cins: " + tokens[0]);
                                             break;
                                         case 2:
                                             ((AltGiyim) alt).setRenk(tokens[1]);
-                                            System.out.println("renk: " +tokens[1]);
+                                            System.out.println("renk: " + tokens[1]);
                                             break;
                                         case 3:
                                             ((AltGiyim) alt).setAd(tokens[2]);
-                                            System.out.println("ad: " +tokens[2]);
+                                            System.out.println("ad: " + tokens[2]);
                                             break;
                                         case 4:
                                             int seri = Integer.parseInt(tokens[3]);
-                                            i.setSeriNo(seri);
-                                            System.out.println("seriNo: " +tokens[3]);
+                                            alt.setSeriNo(seri);
+                                            System.out.println("seriNo: " +alt.getSeriNo());
                                             break;
                                         case 5:
                                             int fiyat = Integer.parseInt(tokens[4]);
-                                            i.setFiyat(fiyat);
-                                            System.out.println("fiyat: " +tokens[4]);
+                                            alt.setFiyat(fiyat);
+                                            System.out.println("fiyat: " + alt.getFiyat());
                                             break;
-
                                     }
-                                    Veriler.urunList.add(alt);
-                                    
-                                }System.out.println("urunlistesi: " + Veriler.urunList);
+                                }
+                                Veriler.urunList.add(alt);
+
+                                System.out.println("urunlistesi: " + Veriler.urunList);
                                 break;
                             case "üstGiyim":
                                 for (int c = 1; c < 6; c++) {
                                     switch (c) {
                                         case 1:
                                             ((UstGiyim) ust).setCins(tokens[0]);
-                                            System.out.println("cins: " +tokens[0]);
+                                            System.out.println("cins: " + tokens[0]);
                                             break;
                                         case 2:
                                             ((UstGiyim) ust).setRenk(tokens[1]);
-                                            System.out.println("renk: " +tokens[1]);
+                                            System.out.println("renk: " + tokens[1]);
                                             break;
                                         case 3:
                                             ((UstGiyim) ust).setAd(tokens[2]);
-                                            System.out.println("ad: " +tokens[2]);
+                                            System.out.println("ad: " + tokens[2]);
                                             break;
                                         case 4:
                                             int seri = Integer.parseInt(tokens[3]);
-                                            i.setSeriNo(seri);
-                                            System.out.println("seriNo: " +tokens[3]);
+                                            ust.setSeriNo(seri);
+                                            System.out.println("seriNo: " + ust.getSeriNo());
                                             break;
                                         case 5:
                                             int fiyat = Integer.parseInt(tokens[4]);
-                                            i.setFiyat(fiyat);
-                                            System.out.println("fiyat: " +tokens[4]);
+                                            ust.setFiyat(fiyat);
+                                            System.out.println("fiyat: " +ust.getFiyat());
                                             break;
 
                                     }
-                                    Veriler.urunList.add(ust);
-                                   
-                                } System.out.println("urunlistesi: " + Veriler.urunList);
+                                }
+                                Veriler.urunList.add(ust);
+                                System.out.println("urunlistesi: " + Veriler.urunList);
                                 break;
                             case "deterjan":
                                 for (int c = 1; c < 5; c++) {
                                     switch (c) {
                                         case 1:
                                             ((Deterjan) det).setCins(tokens[0]);
-                                            System.out.println("cins: " +tokens[0]);
+                                            System.out.println("cins: " + tokens[0]);
                                             break;
                                         case 2:
                                             ((Deterjan) det).setAd(tokens[1]);
-                                            System.out.println("ad: " +tokens[1]);
+                                            System.out.println("ad: " + tokens[1]);
                                             break;
                                         case 3:
                                             int seri = Integer.parseInt(tokens[2]);
-                                            i.setSeriNo(seri);
-                                            System.out.println("seriNo: " +tokens[2]);
+                                            det.setSeriNo(seri);
+                                            System.out.println("seriNo: " + seri);
                                             break;
                                         case 4:
                                             int fiyat = Integer.parseInt(tokens[3]);
-                                            i.setFiyat(fiyat);
-                                            System.out.println("fiyat: " +tokens[3]);
+                                            det.setFiyat(fiyat);
+                                            System.out.println("fiyat: " + fiyat);
                                             break;
 
                                     }
-                                    Veriler.urunList.add(det);
-                                   
-                                } System.out.println("urunlistesi: " + Veriler.urunList);
+                                }
+                                Veriler.urunList.add(det);
+
+                                System.out.println("urunlistesi: " + Veriler.urunList);
                                 break;
                             case "temizlikGerecleri":
                                 for (int c = 1; c < 5; c++) {
                                     switch (c) {
                                         case 1:
                                             ((TemizlikGerecleri) tg).setCins(tokens[0]);
-                                            System.out.println("cins: " +tokens[0]);
+                                            System.out.println("cins: " + tokens[0]);
                                             break;
                                         case 2:
                                             ((TemizlikGerecleri) tg).setAd(tokens[1]);
-                                            System.out.println("ad: " +tokens[1]);
+                                            System.out.println("ad: " + tokens[1]);
                                             break;
                                         case 3:
                                             int seri = Integer.parseInt(tokens[2]);
-                                            i.setSeriNo(seri);
-                                            System.out.println("seriNo: " +tokens[2]);
+                                            tg.setSeriNo(seri);
+                                            System.out.println("seriNo: " + tg.getSeriNo());
                                             break;
                                         case 4:
                                             int fiyat = Integer.parseInt(tokens[3]);
-                                            i.setFiyat(fiyat);
-                                            System.out.println("fiyat: " +tokens[3]);
+                                            tg.setFiyat(fiyat);
+                                            System.out.println("fiyat: " +tg.getFiyat());
                                             break;
                                         default:
                                             break;
                                     }
-                                    Veriler.urunList.add(tg);
-                                    
-                                }System.out.println("urunlistesi: " + Veriler.urunList);
+                                }
+                                Veriler.urunList.add(tg);
+
+                                System.out.println("urunlistesi: " + Veriler.urunList);
                         }
 
                     }
@@ -367,8 +371,9 @@ public class FileReadTest {
                                     default:
                                         break;
                                 }
-                                Veriler.personelList.add(p);
                             }
+                            Veriler.personelList.add(p);
+
                             System.out.println("personel listesi");
                             System.out.println(Veriler.personelList);
                             System.out.println("");
@@ -395,9 +400,9 @@ public class FileReadTest {
                                     default:
                                         break;
                                 }
-                                Veriler.musteriList.add(m);
-
                             }
+                            Veriler.musteriList.add(m);
+
                             System.out.println("Müsteri Listesi: ");
                             System.out.println(Veriler.musteriList);
                             System.out.println("");

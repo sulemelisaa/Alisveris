@@ -10,11 +10,10 @@ package urun;
  * @author melisaborekcioglu
  */
 public class Telefon extends Elektronik{
-    private int model;
-
-    public Telefon(int model, int guc, String ad, int seriNo, int fiyat, String cins) {
+    
+    public Telefon( int guc, String ad, int seriNo, int fiyat, String cins) {
         super(guc, ad, seriNo, fiyat, cins);
-        this.model = model;
+        
     }
 
     
