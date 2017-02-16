@@ -12,6 +12,8 @@ package urun;
 public class AltGiyim extends Giyim {
 
     public AltGiyim(String renk, String ad, int seriNo, int fiyat, String cins) {
+        
         super(renk, ad, seriNo, fiyat, cins);
+        
     }
 }
