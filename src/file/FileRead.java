@@ -121,6 +121,7 @@ public class FileRead {
                             case "evAletleri":
                                 for (int c = 1; c < 6; c++) {
                                     switch (c) {
+                                        
                                         case 1:
                                             ((EvAletleri) ea).setCins(tokens[0]);
                                           //  System.out.print("cins: " + tokens[0]);
