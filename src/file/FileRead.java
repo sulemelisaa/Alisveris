@@ -117,6 +117,7 @@ public class FileRead {
                                 }
                                 Veriler.urunList.add(i);
                                 break;
+                                
                             case "evAletleri":
                                 for (int c = 1; c < 6; c++) {
                                     switch (c) {
