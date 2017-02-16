@@ -103,7 +103,6 @@ public class FileRead {
                                             i.setAd(tokens[1]);
                                            // System.out.print(" ad: " + tokens[1]);
                                             break;
-
                                         case 3:
                                             int fiyat = Integer.parseInt(tokens[2]);
                                             i.setFiyat(fiyat);
