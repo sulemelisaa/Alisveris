@@ -168,21 +168,21 @@ public class Veriler {
                     String ad = Veriler.musteriList.get(i).getIsim();
                     int fiyat = 0;
                     int toplamAdet = 0;
+                    boolean b = false; 
                     for (int j = 0; j < musteriSiparis.getUrunListesi().size(); j++) {
                         String cins = musteriSiparis.getUrunListesi().get(j).getUrun().getCins();
-
                         if (bolum.equals(cins)) {
-
                             UrunAdet adet = musteriSiparis.getUrunListesi().get(j);
                             int topFiyat = adet.getAdet() * adet.getUrun().getFiyat();
 
                             fiyat += topFiyat;
                            
                             toplamAdet++;
+                            b = true;
                         }
                     }
-
-                    System.out.println(ad + " - " + toplamAdet + " çeşit ürün" + fiyat + " - tl ");
+                    if(b)
+                        System.out.println(ad + " - " + toplamAdet + " çeşit ürün" + fiyat + " - tl ");
 //                    Veriler.detayGoruntule(m,bolum);
                 }
             }

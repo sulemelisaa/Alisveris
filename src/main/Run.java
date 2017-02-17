@@ -33,10 +33,10 @@ import urun.Yiyecek;
 public class Run {
 
     public static void main(String[] args) {
-        while (true) {
-            try {
                Kisi();
                Urun();
+        while (true) {
+            try {
                 System.out.println("* * * * * * * * * * * *  HOŞ GELDİNİZ  * * * * * * * * * * * *");
                 Scanner giris = new Scanner(System.in);
                 System.out.println(" ");

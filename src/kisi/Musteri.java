@@ -20,6 +20,10 @@ public class Musteri extends Kisi {
     private Siparis siparis;
     private int musteriNo;
 
+    public Musteri() {
+        this(null, null,0);
+    }
+
     public Musteri(String ad, String soyad, Integer musteriNo) {
         super(ad, soyad);
 //        this.kartliMi = kartliMi;

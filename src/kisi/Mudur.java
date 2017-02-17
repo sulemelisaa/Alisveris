@@ -12,6 +12,10 @@ public class Mudur extends MagazaPersoneli {
 
     private String bolum; //gıda, giyim vs.
 
+    public Mudur() {
+        super(null, null, null, 0, null, 0);
+    }
+
     public Mudur(String ad, String soyad, String kullaniciAdi, int sifre, String yetki, int subeKodu, String bolum) {
         super(ad, soyad, kullaniciAdi, sifre, yetki, subeKodu);
         this.bolum = bolum;
